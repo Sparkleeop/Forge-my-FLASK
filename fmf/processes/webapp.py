@@ -2,8 +2,10 @@ import time
 import subprocess
 from pathlib import Path
 
-def init_webapp_project():
-    project_name = input("Enter your main directory name/project name: ")
+def init_webapp_project(project_name=None):
+    
+    if project_name == None:
+        project_name = input("Enter project name: ")
     project_path = Path(project_name)
 
     print(f"Starting base template installation... for the project {project_name}")

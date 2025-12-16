@@ -11,10 +11,10 @@ FMF is designed to be beginner friendly while still following patterns used in r
 
 - Create Flask web applications with templates and static files
 - Create Flask API projects using blueprints
+- Interactive and non interactive CLI usage
 - Clean and consistent project structure
 - No configuration required
 - Works on Windows, Linux, and macOS
-- Simple interactive CLI
 
 ---
 
@@ -41,9 +41,6 @@ Generates a Flask API project with:
 
 Best suited for REST APIs and backend services.
 
-Here’s a **clean, updated replacement** for that section, now that you’re on PyPI.
-Professional tone, no fluff, copy-paste ready.
-
 ---
 
 ## Installation
@@ -60,12 +57,29 @@ Run the CLI:
 fmf
 ```
 
----
+### Windows note
 
+If the `fmf` command is not recognized, use:
+
+```bash
+python -m fmf
+```
+
+This can happen if the Python Scripts directory is not added to PATH.
+
+---
 
 ## Usage
 
-When you start FMF, you will be prompted to select a project type:
+### Interactive mode
+
+Run:
+
+```bash
+fmf
+```
+
+You will be prompted to select a project type:
 
 ```
 Forge My Flask (FMF)
@@ -74,7 +88,20 @@ Forge My Flask (FMF)
 2. WebApp Project
 ```
 
-Follow the prompts and enter a project name. FMF will generate the project structure automatically.
+Follow the prompts and enter a project name. FMF will generate the project automatically.
+
+---
+
+### Non interactive mode
+
+Create projects directly from the command line:
+
+```bash
+fmf init api my_api_project
+fmf init web my_web_project
+```
+
+This skips the menu and scaffolds the project immediately.
 
 ---
 
@@ -83,7 +110,7 @@ Follow the prompts and enter a project name. FMF will generate the project struc
 ### Web App Structure
 
 ```
-my_web_app/
+my_web_project/
 ├── app.py
 ├── requirements.txt
 ├── templates/
@@ -95,7 +122,7 @@ my_web_app/
 ### API Structure
 
 ```
-my_api/
+my_api_project/
 ├── app.py
 ├── config.py
 ├── requirements.txt
@@ -120,9 +147,7 @@ FMF solves this by providing a simple and consistent starting point that can be 
 
 Planned improvements include:
 
-* Non interactive CLI commands
-* Optional database setup
-* Authentication templates
+* Additional CLI flags such as `--no-install`
 * Environment based configuration
 
 ---

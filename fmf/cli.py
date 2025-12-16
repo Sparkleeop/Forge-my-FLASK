@@ -18,7 +18,7 @@ def print_banner():
 def parse_args():
     parser = argparse.ArgumentParser(
         prog="fmf",
-        description="Forge My Flask - Flask project scaffolder"
+        description="Forge My Flask CLI"
     )
 
     parser.add_argument(
@@ -27,8 +27,25 @@ def parse_args():
         version=f"%(prog)s {fmf_version}"
     )
 
-    return parser.parse_args()
+    subparsers = parser.add_subparsers(dest="command")
 
+    init_parser = subparsers.add_parser(
+        "init",
+        help="Initialize a new Flask project"
+    )
+
+    init_parser.add_argument(
+        "type",
+        choices=["api", "webapp"],
+        help="Type of project to create"
+    )
+
+    init_parser.add_argument(
+        "name",
+        help="Project directory name"
+    )
+
+    return parser.parse_args()
 
 def init_menu():
     print_banner()
@@ -42,7 +59,14 @@ def init_menu():
     elif choice == "2":
         init_webapp_project()
 
-
 def main():
-    parse_args()
-    init_menu()
+    args = parse_args()
+
+    if args.command == "init":
+        if args.type == "api":
+            init_api_project(args.name)
+        elif args.type == "webapp":
+            init_webapp_project(args.name)
+    else:
+        init_menu()
+

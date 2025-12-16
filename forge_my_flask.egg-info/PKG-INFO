@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: forge-my-flask
-Version: 0.1.0
+Version: 0.2.0
 Summary: A CLI tool to scaffold Flask web apps and APIs
 Author: Sparklee
 License: MIT
@@ -9,7 +9,9 @@ Project-URL: Repository, https://github.com/Sparkleeop/Forge-my-FLASK
 Project-URL: Issues, https://github.com/Sparkleeop/Forge-my-FLASK/issues
 Requires-Python: >=3.9
 Description-Content-Type: text/markdown
+License-File: LICENSE
 Requires-Dist: flask
+Dynamic: license-file
 
 # Forge My Flask (FMF)
 
@@ -54,26 +56,27 @@ Generates a Flask API project with:
 
 Best suited for REST APIs and backend services.
 
+Here’s a **clean, updated replacement** for that section, now that you’re on PyPI.
+Professional tone, no fluff, copy-paste ready.
+
 ---
 
 ## Installation
 
-PyPI release coming soon.
-
-For now, clone the repository:
+Install FMF from PyPI:
 
 ```bash
-git clone https://github.com/Sparkleeop/Forge-my-FLASK.git
-cd forge-my-flask
+pip install forge-my-flask
 ````
 
 Run the CLI:
 
 ```bash
-python app.py
+fmf
 ```
 
 ---
+
 
 ## Usage
 
