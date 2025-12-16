@@ -46,9 +46,6 @@ Professional tone, no fluff, copy-paste ready.
 
 ---
 
-````md
----
-
 ## Installation
 
 Install FMF from PyPI:
